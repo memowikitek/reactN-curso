@@ -9,8 +9,7 @@ export default function ItemsLayout() {
         headerTitleStyle: { fontWeight: 'bold' }
       }}
     >
-      <Stack.Screen name="index" options={{title: 'Productos'}} />
-      <Stack.Screen name="details" options={{title: 'Detalles'}} />
+      <Stack.Screen name="index" options={{title: 'Settings'}} />
     </Stack>
   );
 }
