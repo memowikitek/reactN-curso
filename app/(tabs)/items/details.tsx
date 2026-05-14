@@ -22,7 +22,7 @@ export default function Details() {
         <View style={styles.textContent}>
           <View style={styles.productContainer}>
             <View style={styles.titleContainer}>
-              <ThemedText style={styles.category}>{category}</ThemedText>
+              <ThemedText style={styles.category}>{category} | {id}</ThemedText>
               <ThemedText style={styles.title}>{title}</ThemedText>
             </View>
             <View style={styles.priceContainer}>
