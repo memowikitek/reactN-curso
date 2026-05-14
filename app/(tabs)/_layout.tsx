@@ -24,13 +24,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="tareas"
-        options={{
-          title: 'Tareas',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="checkmark.circle" color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="items"
         options={{
           title: 'Items',
