@@ -2,17 +2,9 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
-
-export type Product = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-}
+import { Product } from '../../../types';
 
 export default function Items() {
   const key = (item: Product) => item.id.toString();
@@ -42,7 +34,7 @@ export default function Items() {
     router.push({ pathname: '/items/details', params: item }); // Navega a la pantalla de detalles con el item como parámetro
   };
 
-  const renderItem = ({ item }: { item: Product }) => (
+  const renderItem = useCallback(({ item }: { item: Product }) => (
     <ThemedView>
       <TouchableOpacity onPress={() => onPressItem(item)} style={styles.itemContainer}>
         <Image contentFit="contain" source={{ uri: item.image }} style={styles.image} />
@@ -54,7 +46,7 @@ export default function Items() {
         </View>
       </TouchableOpacity>
     </ThemedView>
-  );
+  ), []);
 
   return (
     <FlatList
